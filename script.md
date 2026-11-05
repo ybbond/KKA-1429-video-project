@@ -180,7 +180,7 @@ It is relatable to university students and relatively easy to produce with AI-ge
     - Sisilia Gunung Ata Kewae | 01086250017 - Sistem Informasi
     - Vick Rab Wilbert | 01085250019 - Informatika
     - Willy Lengkong | 01086250001 - Sistem Informasi
-    - Winson Winson | 01085250003 - Informatika
+    - Winson | 01085250003 - Informatika
     - Yohanes Bandung Bondowoso | 01085250015 - Informatika
   - **CAPTION / AUDIO:** *(Silent credits card)*
 

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1437" />
+      <stop offset="100%" stop-color="#4b2a8f" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)" />
+
+  <!-- Stars -->
+  <g fill="#fdfcff" opacity="0.6">
+    <circle cx="160" cy="110" r="2.5" />
+    <circle cx="480" cy="140" r="3" fill="#39c6f2" />
+    <circle cx="820" cy="95" r="2.2" />
+    <circle cx="1160" cy="130" r="2.8" fill="#ffd23f" />
+    <circle cx="1490" cy="105" r="2.4" />
+    <circle cx="1760" cy="160" r="3" />
+  </g>
+
+  <!-- Ground -->
+  <ellipse cx="960" cy="1240" rx="1540" ry="445" fill="#2ee6c5" opacity="0.12" />
+  <ellipse cx="960" cy="1240" rx="1500" ry="420" fill="#0b1437" />
+
+  <!-- Knowledge Signal Arc -->
+  <path d="M490 540 Q960 320 1430 560" fill="none" stroke="#2ee6c5" stroke-width="5" stroke-dasharray="16 14" opacity="0.7" />
+  <circle cx="740" cy="445" r="10" fill="#ffd23f" />
+  <circle cx="1180" cy="450" r="10" fill="#ffd23f" />
+
+  <!-- Lit Bulb over Raka -->
+  <g transform="translate(400 390)">
+    <circle r="96" fill="#ffd23f" opacity="0.14" />
+    <circle r="68" fill="#ffd23f" opacity="0.28" />
+    <g stroke="#ffd23f" stroke-width="6" stroke-linecap="round">
+      <line y1="-52" y2="-68" />
+      <line y1="-52" y2="-68" transform="rotate(45)" />
+      <line y1="-52" y2="-68" transform="rotate(90)" />
+      <line y1="-52" y2="-68" transform="rotate(135)" />
+      <line y1="-52" y2="-68" transform="rotate(180)" />
+      <line y1="-52" y2="-68" transform="rotate(225)" />
+      <line y1="-52" y2="-68" transform="rotate(270)" />
+      <line y1="-52" y2="-68" transform="rotate(315)" />
+    </g>
+    <circle r="38" fill="#ffd23f" />
+    <path d="M-12 -6 Q0 -24 12 -6" fill="none" stroke="#fdfcff" stroke-width="4" stroke-linecap="round" />
+    <rect x="-16" y="32" width="32" height="22" rx="6" fill="#d9e4ff" />
+  </g>
+
+  <!-- Raka (Person) -->
+  <g transform="translate(400 860)">
+    <ellipse rx="68" ry="12" fill="#0b1437" opacity="0.28" />
+    <rect x="-42" y="-70" width="30" height="70" rx="15" fill="#0b1437" />
+    <rect x="12" y="-70" width="30" height="70" rx="15" fill="#0b1437" />
+    <rect x="-72" y="-225" width="144" height="170" rx="60" fill="#ff8a3c" />
+    <path d="M-62 -190 Q-96 -150 -46 -118" fill="none" stroke="#ff8a3c" stroke-width="30" stroke-linecap="round" />
+    <path d="M62 -190 Q96 -150 46 -118" fill="none" stroke="#ff8a3c" stroke-width="30" stroke-linecap="round" />
+    <circle cy="-305" r="85" fill="#ffc9a3" />
+    <path d="M-88 -300 A88 88 0 0 1 88 -300 Q30 -345 -88 -300Z" fill="#2b1b4d" />
+    <circle cx="-22" cy="-298" r="9" fill="#0b1437" />
+    <circle cx="-25" cy="-301" r="3" fill="#fdfcff" />
+    <circle cx="38" cy="-298" r="9" fill="#0b1437" />
+    <circle cx="35" cy="-301" r="3" fill="#fdfcff" />
+    <circle cx="-52" cy="-272" r="13" fill="#e8408f" opacity="0.25" />
+    <circle cx="52" cy="-272" r="13" fill="#e8408f" opacity="0.25" />
+    <path d="M-24 -6 Q0 24 24 -6" transform="translate(3 -262)" fill="none" stroke="#0b1437" stroke-width="6" stroke-linecap="round" />
+  </g>
+
+  <!-- Code Editor Window -->
+  <g transform="translate(960 500)">
+    <rect x="-360" y="-150" width="720" height="290" rx="32" fill="#0b1437" stroke="#2ee6c5" stroke-width="6" />
+    <circle cx="-310" cy="-108" r="10" fill="#ff4d5e" />
+    <circle cx="-278" cy="-108" r="10" fill="#ffd23f" />
+    <circle cx="-246" cy="-108" r="10" fill="#58c96b" />
+    <text x="-310" y="-24" font-family="Menlo, monospace" font-size="40" fill="#2ee6c5">if (n === 0) return 1;</text>
+    <text x="-310" y="48" font-family="Menlo, monospace" font-size="40" fill="#2ee6c5">return n * f(n - 1);▋</text>
+  </g>
+
+  <!-- AI Robot -->
+  <g transform="translate(1520 860)">
+    <ellipse rx="76" ry="14" fill="#0b1437" opacity="0.32" />
+    <g transform="translate(0 -50)">
+      <circle cy="-302" r="44" fill="none" stroke="#ffd23f" stroke-width="4" opacity="0.4" />
+      <rect x="-94" y="-62" width="24" height="42" rx="12" fill="#d9e4ff" />
+      <rect x="70" y="-62" width="24" height="42" rx="12" fill="#d9e4ff" />
+      <rect x="-60" y="-100" width="120" height="100" rx="36" fill="#d9e4ff" />
+      <circle cy="-50" r="22" fill="#2ee6c5" opacity="0.25" />
+      <circle cy="-50" r="14" fill="#2ee6c5" />
+      <rect x="-4" y="-295" width="8" height="50" fill="#d9e4ff" />
+      <circle cy="-302" r="28" fill="#ffd23f" opacity="0.35" />
+      <circle cy="-302" r="15" fill="#ffd23f" />
+      <rect x="-95" y="-250" width="190" height="145" rx="50" fill="#fdfcff" />
+      <rect x="-75" y="-232" width="150" height="108" rx="34" fill="#0b1437" />
+      <circle cx="-42" cy="-192" r="13" fill="#2ee6c5" />
+      <circle cx="-45" cy="-195" r="4" fill="#fdfcff" />
+      <circle cx="22" cy="-192" r="13" fill="#2ee6c5" />
+      <circle cx="19" cy="-195" r="4" fill="#fdfcff" />
+      <path d="M-24 -162 Q0 -142 24 -162" transform="translate(-5 0)" fill="none" stroke="#2ee6c5" stroke-width="7" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- Caption Overlay -->
+  <g font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="250" y="952" width="1420" height="84" rx="28" fill="#0b1437" opacity="0.86" />
+    <text x="960" y="996" text-anchor="middle" dominant-baseline="central" font-size="38" font-weight="600" fill="#fdfcff">
+      AI menjelaskan dengan sabar, lalu Raka sendiri yang menulis kodenya.
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22092e" />
+      <stop offset="100%" stop-color="#5a1030" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)" />
+  <rect width="1920" height="1080" fill="#ff4d5e" opacity="0.1" />
+
+  <!-- Ground -->
+  <ellipse cx="960" cy="1240" rx="1500" ry="420" fill="#0b1437" />
+
+  <!-- Broken Demo Monitor -->
+  <g transform="translate(960 400)" font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif">
+    <circle cx="-165" cy="-240" r="22" fill="#d9e4ff" opacity="0.26" />
+    <circle cx="10" cy="-265" r="28" fill="#d9e4ff" opacity="0.2" />
+    <circle cx="185" cy="-230" r="20" fill="#d9e4ff" opacity="0.28" />
+    <rect x="-290" y="-190" width="580" height="380" rx="36" fill="#0b1437" stroke="#ff4d5e" stroke-width="10" />
+    <circle cx="-235" cy="-142" r="10" fill="#ff4d5e" />
+    <circle cx="-202" cy="-142" r="10" fill="#ffd23f" />
+    <circle cx="-169" cy="-142" r="10" fill="#58c96b" />
+    <text y="-10" text-anchor="middle" dominant-baseline="central" font-size="106" font-weight="800" fill="#ff4d5e">ERROR</text>
+    <rect x="-210" y="92" width="420" height="18" rx="9" fill="#ff4d5e" opacity="0.35" />
+  </g>
+
+  <!-- Worried Raka + "..." Bubble + Sweat Drop -->
+  <g transform="translate(330 860)">
+    <ellipse rx="68" ry="12" fill="#0b1437" opacity="0.28" />
+    <rect x="-42" y="-70" width="30" height="70" rx="15" fill="#0b1437" />
+    <rect x="12" y="-70" width="30" height="70" rx="15" fill="#0b1437" />
+    <rect x="-72" y="-225" width="144" height="170" rx="60" fill="#ff8a3c" />
+    <path d="M-62 -190 Q-108 -130 -84 -78" fill="none" stroke="#ff8a3c" stroke-width="30" stroke-linecap="round" />
+    <path d="M62 -190 Q108 -130 84 -78" fill="none" stroke="#ff8a3c" stroke-width="30" stroke-linecap="round" />
+    <circle cy="-305" r="85" fill="#ffc9a3" />
+    <path d="M-88 -300 A88 88 0 0 1 88 -300 Q30 -345 -88 -300Z" fill="#2b1b4d" />
+    <circle cx="-22" cy="-298" r="9" fill="#0b1437" />
+    <circle cx="38" cy="-298" r="9" fill="#0b1437" />
+    <path d="M-16 -322 L-44 -312" stroke="#0b1437" stroke-width="6" stroke-linecap="round" />
+    <path d="M16 -322 L44 -312" stroke="#0b1437" stroke-width="6" stroke-linecap="round" />
+    <path d="M-20 12 Q0 -8 20 12" transform="translate(3 -262)" fill="none" stroke="#0b1437" stroke-width="6" stroke-linecap="round" />
+  </g>
+  <circle cx="425" cy="560" r="14" fill="#39c6f2" />
+  <g transform="translate(390 320)" font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="-105" y="-70" width="210" height="140" rx="36" fill="#fdfcff" />
+    <path d="M-76 68 L-28 68 L-86 116Z" fill="#fdfcff" />
+    <text text-anchor="middle" dominant-baseline="central" font-size="70" font-weight="700" fill="#0b1437">...</text>
+  </g>
+
+  <!-- Lecturer + Question Bubble -->
+  <g transform="translate(1600 860)">
+    <ellipse rx="68" ry="12" fill="#0b1437" opacity="0.28" />
+    <rect x="-42" y="-70" width="30" height="70" rx="15" fill="#0b1437" />
+    <rect x="12" y="-70" width="30" height="70" rx="15" fill="#0b1437" />
+    <rect x="-72" y="-225" width="144" height="170" rx="60" fill="#39c6f2" />
+    <path d="M-62 -190 Q-118 -175 -128 -215" fill="none" stroke="#39c6f2" stroke-width="30" stroke-linecap="round" />
+    <path d="M62 -190 Q108 -130 84 -78" fill="none" stroke="#39c6f2" stroke-width="30" stroke-linecap="round" />
+    <circle cy="-305" r="85" fill="#ffc9a3" />
+    <path d="M-88 -300 A88 88 0 0 1 88 -300 Q30 -345 -88 -300Z" fill="#d9e4ff" />
+    <circle cx="-38" cy="-298" r="9" fill="#0b1437" />
+    <circle cx="22" cy="-298" r="9" fill="#0b1437" />
+    <path d="M-16 6 L16 6" transform="translate(-3 -262)" fill="none" stroke="#0b1437" stroke-width="6" stroke-linecap="round" />
+  </g>
+  <g transform="translate(1540 270)" font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="-270" y="-77" width="540" height="154" rx="36" fill="#fdfcff" />
+    <path d="M111 75 L159 75 L169 123Z" fill="#fdfcff" />
+    <text y="-26" text-anchor="middle" dominant-baseline="central" font-size="40" font-weight="600" fill="#0b1437">Mengapa kodemu</text>
+    <text y="26" text-anchor="middle" dominant-baseline="central" font-size="40" font-weight="600" fill="#0b1437">ditulis seperti ini?</text>
+  </g>
+
+  <!-- Caption Overlay -->
+  <g font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="210" y="952" width="1500" height="84" rx="28" fill="#0b1437" opacity="0.86" />
+    <text x="960" y="996" text-anchor="middle" dominant-baseline="central" font-size="36" font-weight="600" fill="#fdfcff">
+      Raka terdiam. Kode itu atas namanya, tetapi dia tidak bisa memperbaikinya sendiri.
+    </text>
+  </g>
+</svg>
