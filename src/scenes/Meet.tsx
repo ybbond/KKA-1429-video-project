@@ -2,20 +2,21 @@ import { Person } from "../components/characters";
 import { Tag } from "../components/labels";
 import { Pop, ramp, useSeconds } from "../components/motion";
 import { Desk } from "../components/props";
-import { GROUND_Y, Stage } from "../components/Stage";
+import { GROUND_Y, Stage, useIsPortrait } from "../components/Stage";
 import { COLORS } from "../theme";
 
 const CONCEPTS = [
-  { text: "Rekursi", x: 560, y: 260, at: 5.2, color: COLORS.magenta },
-  { text: "Pointer", x: 1360, y: 260, at: 6, color: COLORS.cyan },
-  { text: "Algoritma", x: 500, y: 520, at: 6.8, color: COLORS.yellow },
-  { text: "Big-O", x: 1420, y: 520, at: 7.6, color: COLORS.orange },
+  { text: "Rekursi", x: 560, y: 260, px: 580, py: -40, at: 5.2, color: COLORS.magenta },
+  { text: "Pointer", x: 1360, y: 260, px: 1340, py: -40, at: 6, color: COLORS.cyan },
+  { text: "Algoritma", x: 500, y: 520, px: 560, py: 220, at: 6.8, color: COLORS.yellow },
+  { text: "Big-O", x: 1420, y: 520, px: 1360, py: 220, at: 7.6, color: COLORS.orange },
 ];
 
 export const Meet = () => {
   const t = useSeconds();
-  const moonX = ramp(t, 0, 15, 180, 1740);
-  const moonY = 170 - Math.sin((t / 15) * Math.PI) * 75;
+  const isPortrait = useIsPortrait();
+  const moonX = ramp(t, 0, 15, isPortrait ? 420 : 180, isPortrait ? 1500 : 1740);
+  const moonY = (isPortrait ? -260 : 170) - Math.sin((t / 15) * Math.PI) * 75;
   const lookDir = t < 5 ? "down" : t < 7 ? "left" : t < 9 ? "right" : "up";
 
   return (
@@ -27,8 +28,10 @@ export const Meet = () => {
 
       {CONCEPTS.map((c, i) => {
         if (t < c.at) return null;
-        const ox = c.x + Math.cos(t * 1.6 + i) * 18;
-        const oy = c.y + Math.sin(t * 2 + i) * 14;
+        const cx = isPortrait ? c.px : c.x;
+        const cy = isPortrait ? c.py : c.y;
+        const ox = cx + Math.cos(t * 1.6 + i) * 18;
+        const oy = cy + Math.sin(t * 2 + i) * 14;
         return (
           <line
             key={`tether-${c.text}`}
@@ -52,17 +55,21 @@ export const Meet = () => {
       <Pop at={1} until={5} x={960} y={400}>
         <Tag text="Raka · Ilmu Komputer" />
       </Pop>
-      {CONCEPTS.map((c, i) => (
-        <Pop
-          key={c.text}
-          at={c.at}
-          x={c.x + Math.cos(t * 1.6 + i) * 18}
-          y={c.y + Math.sin(t * 2 + i) * 14}
-          float
-        >
-          <Tag text={c.text} color={c.color} />
-        </Pop>
-      ))}
+      {CONCEPTS.map((c, i) => {
+        const cx = isPortrait ? c.px : c.x;
+        const cy = isPortrait ? c.py : c.y;
+        return (
+          <Pop
+            key={c.text}
+            at={c.at}
+            x={cx + Math.cos(t * 1.6 + i) * 18}
+            y={cy + Math.sin(t * 2 + i) * 14}
+            float
+          >
+            <Tag text={c.text} color={c.color} />
+          </Pop>
+        );
+      })}
       <Pop at={9} x={960} y={350} float>
         <g transform={`rotate(${Math.sin(t * 4) * 10})`}>
           <text textAnchor="middle" fontSize={130} fontWeight={800} fill={COLORS.white}>?</text>

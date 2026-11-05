@@ -1,8 +1,13 @@
 import type { ReactNode } from "react";
-import { AbsoluteFill, random, useCurrentFrame } from "remotion";
+import { AbsoluteFill, random, useCurrentFrame, useVideoConfig } from "remotion";
 import { COLORS, FONT } from "../theme";
 
 export const GROUND_Y = 860;
+
+export const useIsPortrait = () => {
+  const { width, height } = useVideoConfig();
+  return height > width;
+};
 
 const STARS = Array.from({ length: 70 }, (_, i) => ({
   x: random(`x${i}`) * 1920,
@@ -13,8 +18,8 @@ const STARS = Array.from({ length: 70 }, (_, i) => ({
 
 export const Ground = ({ color }: { color: string }) => (
   <g>
-    <ellipse cx={960} cy={1240} rx={1540} ry={445} fill={COLORS.teal} opacity={0.12} />
-    <ellipse cx={960} cy={1240} rx={1500} ry={420} fill={color} />
+    <ellipse cx={960} cy={1620} rx={1840} ry={825} fill={COLORS.teal} opacity={0.12} />
+    <ellipse cx={960} cy={1620} rx={1800} ry={800} fill={color} />
   </g>
 );
 
@@ -26,18 +31,19 @@ type StageProps = {
   children: ReactNode;
 };
 
-/** Scene backdrop: gradient sky, twinkling stars, optional hill, and a 1920x1080 SVG canvas with a slow zoom. */
+/** Scene backdrop: gradient sky, twinkling stars, optional hill, and a 16:9 or 9:16 SVG canvas with a slow zoom. */
 export const Stage = ({ from = COLORS.night, to = COLORS.indigo, ground, stars = true, children }: StageProps) => {
   const frame = useCurrentFrame();
+  const isPortrait = useIsPortrait();
   const shootCycle = (frame % 180) / 45;
   const showShootingStar = stars && shootCycle <= 1;
-  const shootX = 1480 - shootCycle * 520;
-  const shootY = 120 + shootCycle * 210;
+  const shootX = (isPortrait ? 1380 : 1480) - shootCycle * 520;
+  const shootY = (isPortrait ? -260 : 120) + shootCycle * 210;
 
   return (
     <AbsoluteFill style={{ background: `linear-gradient(${from}, ${to})` }}>
       <svg
-        viewBox="0 0 1920 1080"
+        viewBox={isPortrait ? "285 -560 1350 2400" : "0 0 1920 1080"}
         style={{ width: "100%", height: "100%", fontFamily: FONT, transform: `scale(${1 + frame * 0.00012})` }}
       >
         {stars &&
@@ -45,7 +51,7 @@ export const Stage = ({ from = COLORS.night, to = COLORS.indigo, ground, stars =
             <circle
               key={`${s.x}`}
               cx={(s.x + frame * (i % 3 === 0 ? 0.12 : 0.04)) % 1920}
-              cy={s.y}
+              cy={isPortrait ? -540 + (s.y / 800) * 1340 : s.y}
               r={s.r}
               fill={i % 7 === 0 ? COLORS.cyan : i % 11 === 0 ? COLORS.yellow : COLORS.white}
               opacity={0.45 + Math.sin(frame / 18 + s.phase) * 0.38}

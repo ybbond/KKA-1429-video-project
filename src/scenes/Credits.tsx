@@ -1,7 +1,7 @@
 import { Person, Robot } from "../components/characters";
 import { Headline } from "../components/labels";
 import { Pop, ramp, useSeconds } from "../components/motion";
-import { GROUND_Y, Stage } from "../components/Stage";
+import { GROUND_Y, Stage, useIsPortrait } from "../components/Stage";
 import { COLORS } from "../theme";
 
 const MEMBERS = [
@@ -15,9 +15,10 @@ const MEMBERS = [
 
 export const Credits = () => {
   const t = useSeconds();
+  const isPortrait = useIsPortrait();
   return (
     <Stage from={COLORS.night} to={COLORS.indigo} ground={COLORS.night}>
-      <Pop at={0.1} x={960} y={135}>
+      <Pop at={0.1} x={960} y={isPortrait ? -180 : 135}>
         <Headline lines={["Kelompok 15"]} size={70} />
         <text y={68} textAnchor="middle" fontSize={36} fontWeight={700} fill={COLORS.teal}>
           Allah Dan Ciptaan | Class 2026 (KKA 1429)
@@ -26,32 +27,32 @@ export const Credits = () => {
       </Pop>
 
       {MEMBERS.map((member, i) => {
-        const rowY = 325 + i * 82;
+        const rowY = (isPortrait ? 40 : 325) + i * (isPortrait ? 92 : 82);
         const opacity = ramp(t, 0.35 + i * 0.18, 0.85 + i * 0.18, 0, 1);
         const slideX = ramp(t, 0.35 + i * 0.18, 0.85 + i * 0.18, -28, 0);
         return (
           <g key={member.name} transform={`translate(${slideX} ${rowY})`} opacity={opacity}>
-            <text x={925} textAnchor="end" dominantBaseline="central" fontSize={36} fontWeight={700} fill={COLORS.white}>
+            <text x={925} textAnchor="end" dominantBaseline="central" fontSize={isPortrait ? 32 : 36} fontWeight={700} fill={COLORS.white}>
               {member.name}
             </text>
-            <text x={955} textAnchor="middle" dominantBaseline="central" fontSize={36} fontWeight={700} fill={COLORS.teal}>
+            <text x={955} textAnchor="middle" dominantBaseline="central" fontSize={isPortrait ? 32 : 36} fontWeight={700} fill={COLORS.teal}>
               |
             </text>
-            <text x={985} textAnchor="start" dominantBaseline="central" fontSize={34} fontWeight={600} fill={COLORS.silver}>
+            <text x={985} textAnchor="start" dominantBaseline="central" fontSize={isPortrait ? 30 : 34} fontWeight={600} fill={COLORS.silver}>
               {member.detail}
             </text>
           </g>
         );
       })}
 
-      <Pop at={0.4} x={190} y={GROUND_Y} scale={0.52}>
+      <Pop at={0.4} x={isPortrait ? 460 : 190} y={GROUND_Y} scale={0.52}>
         <Person mood="happy" cheer look="right" />
       </Pop>
-      <Pop at={0.6} x={1730} y={GROUND_Y} scale={0.48}>
+      <Pop at={0.6} x={isPortrait ? 1460 : 1730} y={GROUND_Y} scale={0.48}>
         <Robot look="left" active />
       </Pop>
 
-      <Pop at={1.8} x={960} y={950}>
+      <Pop at={1.8} x={960} y={isPortrait ? 980 : 950}>
         <text textAnchor="middle" fontSize={40} fontWeight={700} fill={COLORS.yellow}>
           Terima Kasih
         </text>

@@ -3,7 +3,8 @@
 
 **Mata Kuliah:** Allah Dan Ciptaan | Class 2026 (KKA 1429)  
 **Kelompok:** Kelompok 15  
-**Format:** 3-Minute (`180s` · `1920×1080` @ `30 fps`) Kurzgesagt-Style Programmatic SVG Animation ([Remotion](https://www.remotion.dev/) + React 19 + TypeScript)
+**Format:** 3-Minute (`180s` @ `30 fps`) Kurzgesagt-Style Programmatic SVG Animation ([Remotion](https://www.remotion.dev/) + React 19 + TypeScript)  
+**Output Views:** Landscape `1920×1080` (`Main`) & Phone / Instagram Reels `1080×1920` (`Portrait`)
 
 ---
 
@@ -99,8 +100,10 @@ Full dialogue and visual directions are documented in [`script.md`](script.md).
 Tools are managed via [`mise.toml`](mise.toml) (`bun` and `node` 22):
 
 ```sh
-bun install        # Install dependencies
-bun run dev        # Open Remotion Studio preview (http://localhost:3000)
-bun run typecheck  # Run TypeScript check (tsc --noEmit)
-bun run render     # Render full 3-minute video to out/main.mp4
+bun install              # Install dependencies
+bun run dev              # Open Remotion Studio preview (http://localhost:3000)
+                         # -> Click "Main" (1920x1080) or "Portrait" (1080x1920) in the left sidebar to switch views
+bun run typecheck        # Run TypeScript check (tsc --noEmit)
+bun run render           # Render 16:9 landscape video to out/main.mp4
+bun run render:portrait  # Render 9:16 vertical phone/Reels video to out/portrait.mp4
 ```

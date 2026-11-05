@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "remotion studio",
     "render": "remotion render Main out/main.mp4",
+    "render:portrait": "remotion render Portrait out/portrait.mp4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

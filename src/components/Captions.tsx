@@ -1,23 +1,25 @@
 import { AbsoluteFill, Series, useVideoConfig } from "remotion";
 import { COLORS, FONT } from "../theme";
+import { useIsPortrait } from "./Stage";
 
 export type Caption = { text: string; seconds: number };
 
 const Line = ({ text }: { text: string }) => {
+  const isPortrait = useIsPortrait();
   if (!text) return null;
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 44 }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: isPortrait ? 380 : 44 }}>
       <div
         style={{
-          maxWidth: 1500,
-          padding: "16px 40px",
+          maxWidth: isPortrait ? 920 : 1500,
+          padding: isPortrait ? "22px 40px" : "16px 40px",
           borderRadius: 28,
           background: "rgba(11, 20, 55, 0.84)",
           color: COLORS.white,
           fontFamily: FONT,
-          fontSize: 40,
+          fontSize: isPortrait ? 42 : 40,
           fontWeight: 600,
-          lineHeight: 1.3,
+          lineHeight: 1.35,
           textAlign: "center",
         }}
       >

@@ -7,9 +7,10 @@ The owner asked for SOLID and KISS. Prefer small changes that fit the structure 
 ## Commands
 
 ```sh
-bun run dev        # Studio preview, on localhost:3000 by default
-bun run typecheck  # tsc --noEmit
-bun run render     # writes out/main.mp4 (about 1 minute)
+bun run dev              # Studio preview, on localhost:3000 by default (switch between "Main" 16:9 and "Portrait" 9:16 in the sidebar)
+bun run typecheck        # tsc --noEmit
+bun run render           # writes out/main.mp4 (1920x1080 landscape, about 1 minute)
+bun run render:portrait  # writes out/portrait.mp4 (1080x1920 vertical for phones / Instagram Reels)
 impeccable detect src/                                         # scan for UI/design anti-patterns
 impeccable install -y --providers=antigravity --scope=project  # install/sync repo-scoped skill
 ```
@@ -29,9 +30,9 @@ The repository uses the `impeccable` agent skill (`.agent/skills/impeccable/SKIL
 |---|---|
 | `src/timeline.ts` | Scene order and all caption text and timing. Checks the total length and reading speed. |
 | `src/Main.tsx` | Plays the scenes in order, with fades and captions |
-| `src/Root.tsx` | Registers the composition, with length from the timeline |
-| `src/scenes/*.tsx` | One file per scene, visuals only |
-| `src/components/Stage.tsx` | Backdrop and the 1920x1080 SVG canvas. Exports `GROUND_Y` and `Ground`. |
+| `src/Root.tsx` | Registers the `Main` (`1920x1080` 16:9) and `Portrait` (`1080x1920` 9:16) compositions, with length from the timeline |
+| `src/scenes/*.tsx` | One file per scene, visuals only (adapts to portrait via `useIsPortrait()`) |
+| `src/components/Stage.tsx` | Backdrop and the 16:9 (`0 0 1920 1080`) or 9:16 (`285 -560 1350 2400`) SVG canvas. Exports `GROUND_Y`, `Ground`, and `useIsPortrait`. |
 | `src/components/motion.tsx` | `useSeconds`, `ramp`, `Pop` |
 | `src/components/characters.tsx` | `Person`, `Robot` |
 | `src/components/labels.tsx` | `Tag`, `Bubble`, `Headline` |

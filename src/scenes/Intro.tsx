@@ -2,7 +2,7 @@ import { random } from "remotion";
 import { Person, Robot } from "../components/characters";
 import { Headline } from "../components/labels";
 import { Pop, ramp, useSeconds } from "../components/motion";
-import { Stage } from "../components/Stage";
+import { Stage, useIsPortrait } from "../components/Stage";
 import { COLORS } from "../theme";
 
 const TITLE_END = 0.9;
@@ -17,6 +17,7 @@ const SPICE_MOTES = Array.from({ length: 24 }, (_, i) => ({
 
 export const Intro = () => {
   const t = useSeconds();
+  const isPortrait = useIsPortrait();
   const titleOpacity = ramp(t, TITLE_END - 0.15, TITLE_END + 0.05, 1, 0);
   const quoteOpacity =
     ramp(t, TITLE_END - 0.05, TITLE_END + 0.25, 0, 1) *
@@ -38,10 +39,10 @@ export const Intro = () => {
             <circle r={620} fill="none" stroke={COLORS.violet} strokeWidth={3} opacity={0.38} />
             <circle cx={0} cy={-620} r={12} fill={COLORS.magenta} />
           </g>
-          <g transform="translate(960 400)">
-            <Headline lines={["Mahasiswa yang Menyerahkan", "Segalanya pada AI"]} size={92} />
+          <g transform={`translate(960 ${isPortrait ? 360 : 400})`}>
+            <Headline lines={["Mahasiswa yang Menyerahkan", "Segalanya pada AI"]} size={isPortrait ? 72 : 92} />
             <line x1={-420} y1={185} x2={420} y2={185} stroke={COLORS.teal} strokeWidth={6} strokeLinecap="round" />
-            <text y={255} textAnchor="middle" fontSize={38} fontWeight={700} fill={COLORS.yellow}>
+            <text y={255} textAnchor="middle" fontSize={isPortrait ? 32 : 38} fontWeight={700} fill={COLORS.yellow}>
               Allah Dan Ciptaan | Class 2026 (KKA 1429) · Kelompok 15
             </text>
           </g>
@@ -65,20 +66,28 @@ export const Intro = () => {
               opacity={0.45}
             />
           ))}
-          <g transform={`translate(960 ${ramp(t, TITLE_END, QUOTE_END, 372, 352)})`}>
+          <g transform={`translate(960 ${ramp(t, TITLE_END, QUOTE_END, isPortrait ? 260 : 372, isPortrait ? 240 : 352)})`}>
             <Headline
-              lines={[
-                "“Dahulu manusia menyerahkan cara berpikir mereka kepada mesin,",
-                "dengan harapan hal itu akan membebaskan mereka.”",
-              ]}
-              size={50}
+              lines={
+                isPortrait
+                  ? [
+                      "“Dahulu manusia menyerahkan",
+                      "cara berpikir mereka kepada mesin,",
+                      "dengan harapan hal itu akan membebaskan mereka.”",
+                    ]
+                  : [
+                      "“Dahulu manusia menyerahkan cara berpikir mereka kepada mesin,",
+                      "dengan harapan hal itu akan membebaskan mereka.”",
+                    ]
+              }
+              size={isPortrait ? 42 : 50}
               color={COLORS.white}
             />
-            <text y={145} textAnchor="middle" fontSize={38} fontWeight={600} fill={COLORS.yellow}>
+            <text y={isPortrait ? 190 : 145} textAnchor="middle" fontSize={isPortrait ? 32 : 38} fontWeight={600} fill={COLORS.yellow}>
               “Janganlah engkau membuat mesin yang menyerupai akal budi manusia.”
             </text>
-            <line x1={-280} y1={195} x2={280} y2={195} stroke={COLORS.orange} strokeWidth={4} strokeLinecap="round" />
-            <text y={250} textAnchor="middle" fontSize={30} fontWeight={700} fill={COLORS.silver}>
+            <line x1={-280} y1={isPortrait ? 240 : 195} x2={280} y2={isPortrait ? 240 : 195} stroke={COLORS.orange} strokeWidth={4} strokeLinecap="round" />
+            <text y={isPortrait ? 295 : 250} textAnchor="middle" fontSize={isPortrait ? 25 : 30} fontWeight={700} fill={COLORS.silver}>
               — Catatan Jihad Butlerian · Kitab Suci Oranye (O.C.B.) · Dune, Frank Herbert (1965) —
             </text>
           </g>
@@ -92,12 +101,12 @@ export const Intro = () => {
           <ellipse cx={640 + worldDrift} cy={830} rx={150} ry={40} fill={COLORS.green} />
           <ellipse cx={1300 + worldDrift * 0.7} cy={880} rx={210} ry={50} fill={COLORS.green} />
           <ellipse cx={920 - worldDrift * 0.5} cy={950} rx={180} ry={36} fill={COLORS.green} opacity={0.65} />
-          <g transform={`translate(${960 + Math.sin(satAngle) * 720} ${680 - Math.cos(satAngle) * 260}) rotate(${satAngle * 40})`}>
+          <g transform={`translate(${960 + Math.sin(satAngle) * (isPortrait ? 500 : 720)} ${(isPortrait ? 420 : 680) - Math.cos(satAngle) * 240}) rotate(${satAngle * 40})`}>
             <rect x={-26} y={-8} width={52} height={16} rx={4} fill={COLORS.cyan} />
             <circle r={12} fill={COLORS.silver} />
           </g>
-          <Pop at={QUOTE_END + 0.4} x={960} y={170}>
-            <Headline lines={["Mahasiswa yang Menyerahkan", "Segalanya pada AI"]} />
+          <Pop at={QUOTE_END + 0.4} x={960} y={isPortrait ? -160 : 170}>
+            <Headline lines={["Mahasiswa yang Menyerahkan", "Segalanya pada AI"]} size={isPortrait ? 72 : 96} />
           </Pop>
           <Pop at={QUOTE_END + 0.15} x={960} y={722} scale={0.6}>
             <Person mood="happy" look={t > 10.5 ? "right" : "center"} gesture={t > 10.5} />
