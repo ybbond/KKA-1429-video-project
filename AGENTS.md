@@ -36,10 +36,10 @@ The repository uses the `impeccable` agent skill (`.agent/skills/impeccable/SKIL
 | `src/components/characters.tsx` | `Person`, `Robot` |
 | `src/components/labels.tsx` | `Tag`, `Bubble`, `Headline` |
 | `src/components/props.tsx` | `Desk`, `Bulb` |
-| `src/components/Captions.tsx` | Caption overlay |
+| `src/components/Captions.tsx` | Caption overlay (skips rendering when a caption's `text` is `""`, e.g. for title/credits cards) |
 | `src/theme.ts` | `COLORS`, `FONT` |
 
-Current scene order, with start times: Intro 0:00, Meet 0:12, Discover 0:27, Growth 0:46, Slope 1:00, Hollow 1:24, Crisis 1:41, Realize 2:02, Mandate 2:17, Takeaway 2:40.
+Current scene order, with start times: Intro 0:00 (0.9s title card + 0.9s–5.0s Butlerian/O.C.B. opening quote card + 5.0s–16.0s globe intro), Meet 0:16, Discover 0:31, Growth 0:49, Slope 1:03, Hollow 1:23, Crisis 1:39, Realize 1:57, Mandate 2:12, Takeaway 2:34, Credits 2:52.
 
 ## How to change things
 

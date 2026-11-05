@@ -6,8 +6,8 @@ import { COLORS } from "../theme";
 
 export const Crisis = () => {
   const t = useSeconds();
-  const broken = t > 2.5;
-  const shake = broken && t < 5 ? Math.sin(t * 40) * 8 : 0;
+  const broken = t > 2;
+  const shake = broken && t < 4.2 ? Math.sin(t * 40) * 8 : 0;
   // Slow pulse: anything faster would be an unsafe strobe for photosensitive viewers.
   const alarm = broken ? 0.1 + Math.sin(t * 2) * 0.06 : 0;
   return (
@@ -22,17 +22,17 @@ export const Crisis = () => {
       <Pop x={330} y={GROUND_Y}>
         <Person mood={broken ? "worried" : "neutral"} />
       </Pop>
-      <Pop at={5} x={1600} y={GROUND_Y}>
+      <Pop at={4} x={1600} y={GROUND_Y}>
         <Person hoodie={COLORS.cyan} hair={COLORS.silver} />
       </Pop>
-      <Pop at={6} x={1560} y={270}>
+      <Pop at={5} x={1560} y={270}>
         <Bubble lines={["Mengapa kodemu", "ditulis seperti ini?"]} tail="right" />
       </Pop>
-      <Pop at={13.5} x={390} y={320}>
+      <Pop at={11} x={390} y={320}>
         <Bubble lines={["..."]} size={70} />
       </Pop>
-      {t > 13.5 && (
-        <circle cx={425} cy={ramp((t - 13.5) % 2, 0, 2, GROUND_Y - 360, GROUND_Y - 220)} r={14} fill={COLORS.cyan} />
+      {t > 11 && (
+        <circle cx={425} cy={ramp((t - 11) % 2, 0, 2, GROUND_Y - 360, GROUND_Y - 220)} r={14} fill={COLORS.cyan} />
       )}
     </Stage>
   );

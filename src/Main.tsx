@@ -7,11 +7,11 @@ import { TIMELINE } from "./timeline";
 
 const FADE_FRAMES = 15;
 
-const Fade = ({ children }: { children: ReactNode }) => {
+const Fade = ({ fadeIn = FADE_FRAMES, children }: { fadeIn?: number; children: ReactNode }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const opacity = Math.min(
-    ramp(frame, 0, FADE_FRAMES, 0, 1),
+    ramp(frame, 0, fadeIn, 0, 1),
     ramp(frame, durationInFrames - FADE_FRAMES, durationInFrames, 1, 0),
   );
   return <AbsoluteFill style={{ opacity }}>{children}</AbsoluteFill>;
@@ -22,12 +22,12 @@ export const Main = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.night }}>
       <Series>
-        {TIMELINE.map(({ Visual, captions }) => (
+        {TIMELINE.map(({ Visual, captions }, index) => (
           <Series.Sequence
-            key={captions[0].text}
-            durationInFrames={captions.reduce((sum, c) => sum + c.seconds, 0) * fps}
+            key={Visual.name || captions[0].text}
+            durationInFrames={Math.round(captions.reduce((sum, c) => sum + c.seconds, 0) * fps)}
           >
-            <Fade>
+            <Fade fadeIn={index === 0 ? 4 : FADE_FRAMES}>
               <Visual />
               <Captions captions={captions} />
             </Fade>

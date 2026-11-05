@@ -20,7 +20,7 @@ export const Hollow = () => {
     <Stage to={COLORS.violet} ground={COLORS.night}>
       <rect {...TOWER} rx={30} fill="none" stroke={COLORS.silver} strokeWidth={6} strokeDasharray="24 18" />
       <text x={TOWER.x + TOWER.width / 2} y={620} textAnchor="middle" fontSize={200} fontWeight={800} fill={COLORS.silver}>?</text>
-      <g opacity={ramp(t, 12, 13.2, 1, 0)}>
+      <g opacity={ramp(t, 11, 12.2, 1, 0)}>
         <rect {...TOWER} rx={30} fill={COLORS.yellow} />
         {[0, 1, 2, 3].flatMap((row) =>
           [0, 1, 2].map((col) => (
@@ -28,13 +28,13 @@ export const Hollow = () => {
           )),
         )}
       </g>
-      <Pop at={1} until={12} x={TOWER.x + TOWER.width / 2} y={200} float>
+      <Pop at={1} until={11} x={TOWER.x + TOWER.width / 2} y={200} float>
         <Tag text="Nilai A+" color={COLORS.teal} size={60} />
       </Pop>
-      <Meter label="Nilai" value={ramp(t, 0.5, 5, 0.3, 1)} color={COLORS.teal} y={170} />
-      <Meter label="Pemahaman" value={ramp(t, 5, 12, 0.7, 0.05)} color={COLORS.magenta} y={310} />
+      <Meter label="Nilai" value={ramp(t, 0.5, 4.5, 0.3, 1)} color={COLORS.teal} y={170} />
+      <Meter label="Pemahaman" value={ramp(t, 4.5, 11, 0.7, 0.05)} color={COLORS.magenta} y={310} />
       <Pop x={1300} y={GROUND_Y}>
-        <Person mood={t < 6 ? "happy" : t < 12 ? "neutral" : "worried"} />
+        <Person mood={t < 5 ? "happy" : t < 11 ? "neutral" : "worried"} />
       </Pop>
     </Stage>
   );

@@ -9,7 +9,7 @@ const CODE = ["if (n === 0) return 1;", "return n * f(n - 1);"];
 
 export const Discover = () => {
   const t = useSeconds();
-  const typed = Math.floor(ramp(t, 12.5, 18, 0, CODE.join("").length));
+  const typed = Math.floor(ramp(t, 12.2, 17, 0, CODE.join("").length));
   return (
     <Stage to={COLORS.violet} ground={COLORS.night}>
       <Pop x={400} y={GROUND_Y}>

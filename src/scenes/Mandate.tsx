@@ -41,10 +41,10 @@ export const Mandate = () => {
       <Pop x={330} y={GROUND_Y}>
         <Person mood="happy" />
       </Pop>
-      <Pop at={0.5} until={8} x={880} y={120}>
+      <Pop at={0.5} until={7} x={880} y={120}>
         <Tag text="Kejadian 2:15" color={COLORS.night} textColor={COLORS.white} />
       </Pop>
-      <Pop at={1.5} until={8} x={880} y={250}>
+      <Pop at={1.2} until={7} x={880} y={250}>
         <Headline
           size={46}
           color={COLORS.night}
@@ -52,19 +52,19 @@ export const Mandate = () => {
         />
       </Pop>
       {TOOLS.map((tool, i) => (
-        <Pop key={tool.label} at={8.5 + i * 1.2} until={16} x={420 + i * 280} y={260}>
+        <Pop key={tool.label} at={7.5 + i * 1.2} until={15} x={420 + i * 280} y={260}>
           <circle r={100} fill={COLORS.white} />
           <g>{tool.icon}</g>
           <text y={160} textAnchor="middle" fontSize={40} fontWeight={700} fill={COLORS.night}>{tool.label}</text>
         </Pop>
       ))}
-      <Pop at={16} x={600} y={GROUND_Y} scale={0.6}>
+      <Pop at={15} x={600} y={GROUND_Y} scale={0.6}>
         <Robot />
       </Pop>
-      <Pop at={16.3} x={900} y={170} float>
+      <Pop at={15.3} x={900} y={170} float>
         <Tag text="✓ AI menolong kita bekerja" color={COLORS.teal} />
       </Pop>
-      <Pop at={18.5} x={900} y={320} float>
+      <Pop at={17.5} x={900} y={320} float>
         <Tag text="✗ Lari dari tanggung jawab" color={COLORS.red} />
       </Pop>
     </Stage>

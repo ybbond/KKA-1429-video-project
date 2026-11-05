@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import type { Caption } from "./components/Captions";
+import { Credits } from "./scenes/Credits";
 import { Crisis } from "./scenes/Crisis";
 import { Discover } from "./scenes/Discover";
 import { Growth } from "./scenes/Growth";
@@ -22,8 +23,9 @@ export const TIMELINE: Scene[] = [
   {
     Visual: Intro,
     captions: [
-      { text: "Bayangkan sebuah alat yang mampu mengerjakan hampir semua tugasmu.", seconds: 6 },
-      { text: "Apa jadinya jika kamu benar-benar menyerahkan semuanya kepada alat itu?", seconds: 6 },
+      { text: "", seconds: 5 },
+      { text: "Bayangkan sebuah alat yang mampu mengerjakan hampir semua tugasmu.", seconds: 5.5 },
+      { text: "Apa jadinya jika kamu benar-benar menyerahkan semuanya kepada alat itu?", seconds: 5.5 },
     ],
   },
   {
@@ -39,7 +41,7 @@ export const TIMELINE: Scene[] = [
     captions: [
       { text: "Lalu Raka menemukan AI, dan mulai bertanya.", seconds: 6 },
       { text: "Bukan meminta jawaban, melainkan meminta penjelasan.", seconds: 6 },
-      { text: "AI menjelaskan dengan sabar, lalu Raka sendiri yang menulis kodenya.", seconds: 7 },
+      { text: "AI menjelaskan dengan sabar, lalu Raka sendiri yang menulis kodenya.", seconds: 6 },
     ],
   },
   {
@@ -53,17 +55,17 @@ export const TIMELINE: Scene[] = [
   {
     Visual: Slope,
     captions: [
-      { text: "Tetapi kemudian muncul godaan kecil: kenapa tidak sekalian saja?", seconds: 6 },
-      { text: "Pertama, tugas kuliah.", seconds: 4 },
+      { text: "Tetapi kemudian muncul godaan kecil: kenapa tidak sekalian saja?", seconds: 5 },
+      { text: "Pertama, tugas kuliah.", seconds: 3 },
       { text: "Lalu proyek dan presentasi.", seconds: 4 },
-      { text: "Bahkan keputusan yang seharusnya dia ambil sendiri.", seconds: 5 },
-      { text: "Raka makin jarang berpikir. AI makin banyak bekerja.", seconds: 5 },
+      { text: "Bahkan keputusan yang seharusnya dia ambil sendiri.", seconds: 4 },
+      { text: "Raka makin jarang berpikir. AI makin banyak bekerja.", seconds: 4 },
     ],
   },
   {
     Visual: Hollow,
     captions: [
-      { text: "Hasilnya terlihat mengesankan. Nilai bagus, pujian datang.", seconds: 6 },
+      { text: "Hasilnya terlihat mengesankan. Nilai bagus, pujian datang.", seconds: 5 },
       { text: "Tetapi Raka tidak lagi memahami apa yang dia kumpulkan.", seconds: 6 },
       { text: "Karyanya tampak megah, tetapi isinya kosong.", seconds: 5 },
     ],
@@ -71,9 +73,9 @@ export const TIMELINE: Scene[] = [
   {
     Visual: Crisis,
     captions: [
-      { text: "Lalu datang masalah yang sesungguhnya.", seconds: 5 },
-      { text: "Saat demo proyek, sistemnya rusak, dan dosen bertanya: mengapa kodemu ditulis seperti ini?", seconds: 8 },
-      { text: "Raka terdiam. Kode itu atas namanya, tetapi dia tidak bisa memperbaikinya sendiri.", seconds: 8 },
+      { text: "Lalu datang masalah yang sesungguhnya.", seconds: 4 },
+      { text: "Saat demo proyek, sistemnya rusak, dan dosen bertanya: mengapa kodemu ditulis seperti ini?", seconds: 7 },
+      { text: "Raka terdiam. Kode itu atas namanya, tetapi dia tidak bisa memperbaikinya sendiri.", seconds: 7 },
     ],
   },
   {
@@ -87,7 +89,7 @@ export const TIMELINE: Scene[] = [
   {
     Visual: Mandate,
     captions: [
-      { text: "Sejak awal, Allah memanggil manusia untuk bekerja dan mengusahakan ciptaan-Nya.", seconds: 8 },
+      { text: "Sejak awal, Allah memanggil manusia untuk bekerja dan mengusahakan ciptaan-Nya.", seconds: 7 },
       { text: "Dari cangkul hingga komputer, alat selalu menolong kita menjalankan panggilan itu.", seconds: 8 },
       { text: "AI pun bisa menolong. Namun memakainya untuk lari dari tanggung jawab merusak tujuan kerja itu sendiri.", seconds: 7 },
     ],
@@ -96,8 +98,14 @@ export const TIMELINE: Scene[] = [
     Visual: Takeaway,
     captions: [
       { text: "Gunakan AI untuk belajar, mengeksplorasi, dan memperbaiki karyamu.", seconds: 6 },
-      { text: "Tetapi jangan biarkan AI menggantikan pemikiran, integritas, dan tanggung jawabmu.", seconds: 7 },
-      { text: "AI boleh membantu pekerjaan kita, tetapi tanggung jawab tetap milik kita.", seconds: 7 },
+      { text: "Tetapi jangan biarkan AI menggantikan pemikiran, integritas, dan tanggung jawabmu.", seconds: 6 },
+      { text: "AI boleh membantu pekerjaan kita, tetapi tanggung jawab tetap milik kita.", seconds: 6 },
+    ],
+  },
+  {
+    Visual: Credits,
+    captions: [
+      { text: "", seconds: 8 },
     ],
   },
 ];

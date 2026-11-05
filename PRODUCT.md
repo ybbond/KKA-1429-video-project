@@ -8,8 +8,14 @@ web
 
 ## Users
 
-- **Primary audience:** The KKA-1429 ("Allah dan Ciptaan") course lecturer and fellow university students watching the video as a course submission and/or in-class screening.
-- **Creator / operator:** The student author producing, iterating on, and rendering the video in Remotion, and later recording/attaching voiceover and audio.
+- **Primary audience:** The **Allah Dan Ciptaan | Class 2026 (KKA 1429)** course lecturer and fellow university students watching the video as a course submission and/or in-class screening.
+- **Creators (Kelompok 15):**
+  - Frans Jesky Yeremi (`01086250003` - Sistem Informasi)
+  - Sisilia Gunung Ata Kewae (`01086250017` - Sistem Informasi)
+  - Vick Rab Wilbert (`01085250019` - Informatika)
+  - Willy Lengkong (`01086250001` - Sistem Informasi)
+  - Winson Winson (`01085250003` - Informatika)
+  - Yohanes Bandung Bondowoso (`01085250015` - Informatika)
 
 ## Product Purpose
 
