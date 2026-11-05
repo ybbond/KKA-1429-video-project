@@ -8,16 +8,18 @@ const Line = ({ text }: { text: string }) => {
   const isPortrait = useIsPortrait();
   if (!text) return null;
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: isPortrait ? 380 : 44 }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: isPortrait ? 340 : 44 }}>
       <div
         style={{
-          maxWidth: isPortrait ? 920 : 1500,
-          padding: isPortrait ? "22px 40px" : "16px 40px",
-          borderRadius: 28,
-          background: "rgba(11, 20, 55, 0.84)",
+          maxWidth: isPortrait ? 940 : 1500,
+          padding: isPortrait ? "24px 44px" : "16px 40px",
+          borderRadius: isPortrait ? 32 : 28,
+          background: "rgba(11, 20, 55, 0.9)",
+          border: isPortrait ? "2px solid rgba(0, 210, 190, 0.28)" : undefined,
+          boxShadow: isPortrait ? "0 16px 40px rgba(5, 10, 30, 0.55)" : undefined,
           color: COLORS.white,
           fontFamily: FONT,
-          fontSize: isPortrait ? 42 : 40,
+          fontSize: isPortrait ? 46 : 40,
           fontWeight: 600,
           lineHeight: 1.35,
           textAlign: "center",

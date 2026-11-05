@@ -39,13 +39,13 @@ export const Mandate = () => {
 
   return (
     <Stage from="#1e6fb8" to="#a8ecdf" ground={COLORS.green} stars={false}>
-      <g transform={`translate(${isPortrait ? 1440 : 1720} ${isPortrait ? -340 : 150})`}>
+      <g transform={`translate(${isPortrait ? 1460 : 1720} ${isPortrait ? -380 : 150})`}>
         <circle r={112 + Math.sin(t * 3) * 8} fill={COLORS.yellow} opacity={0.28} />
         <circle r={80} fill={COLORS.yellow} />
       </g>
       <g opacity={0.45}>
-        <ellipse cx={360 + t * 14} cy={isPortrait ? -240 : 150} rx={110} ry={32} fill={COLORS.white} />
-        <ellipse cx={1180 + t * 10} cy={isPortrait ? -320 : 110} rx={140} ry={38} fill={COLORS.white} />
+        <ellipse cx={360 + t * 14} cy={isPortrait ? -340 : 150} rx={110} ry={32} fill={COLORS.white} />
+        <ellipse cx={1180 + t * 10} cy={isPortrait ? -420 : 110} rx={140} ry={38} fill={COLORS.white} />
       </g>
       <g transform={`translate(${isPortrait ? 1380 : 1560} ${GROUND_Y}) scale(${ramp(t, 1, 21, 0.25, 1)}) rotate(${sway})`}>
         <Tree />
@@ -53,33 +53,58 @@ export const Mandate = () => {
       <Pop x={isPortrait ? 480 : 330} y={GROUND_Y}>
         <Person mood="happy" look="right" gesture={t > 15} />
       </Pop>
-      <Pop at={0.5} until={7} x={isPortrait ? 960 : 880} y={isPortrait ? -220 : 120}>
-        <Tag text="Kejadian 2:15" color={COLORS.night} textColor={COLORS.white} />
-      </Pop>
-      <Pop at={1.2} until={7} x={isPortrait ? 960 : 880} y={isPortrait ? -90 : 250}>
-        <Headline
-          size={isPortrait ? 40 : 46}
-          color={COLORS.night}
-          lines={
-            isPortrait
-              ? [
-                  "“TUHAN Allah mengambil manusia itu",
-                  "dan menempatkannya dalam taman Eden",
-                  "untuk mengusahakan dan memelihara taman itu.”",
-                ]
-              : [
-                  "“TUHAN Allah mengambil manusia itu dan menempatkannya",
-                  "dalam taman Eden untuk mengusahakan dan memelihara taman itu.”",
-                ]
-          }
-        />
-      </Pop>
+      {isPortrait ? (
+        <Pop at={0.5} until={7} x={960} y={-150}>
+          <rect
+            x={-580}
+            y={-150}
+            width={1160}
+            height={520}
+            rx={40}
+            fill={COLORS.night}
+            opacity={0.9}
+            stroke={COLORS.teal}
+            strokeWidth={4}
+          />
+          <g transform="translate(0 -95)">
+            <Tag text="Kejadian 2:15" color={COLORS.yellow} textColor={COLORS.night} size={46} />
+          </g>
+          <g transform="translate(0 20)">
+            <Headline
+              size={52}
+              color={COLORS.white}
+              lines={[
+                "“TUHAN Allah mengambil manusia itu",
+                "dan menempatkannya dalam taman Eden",
+                "untuk mengusahakan dan",
+                "memelihara taman itu.”",
+              ]}
+            />
+          </g>
+        </Pop>
+      ) : (
+        <>
+          <Pop at={0.5} until={7} x={880} y={120}>
+            <Tag text="Kejadian 2:15" color={COLORS.night} textColor={COLORS.white} />
+          </Pop>
+          <Pop at={1.2} until={7} x={880} y={250}>
+            <Headline
+              size={46}
+              color={COLORS.night}
+              lines={[
+                "“TUHAN Allah mengambil manusia itu dan menempatkannya",
+                "dalam taman Eden untuk mengusahakan dan memelihara taman itu.”",
+              ]}
+            />
+          </Pop>
+        </>
+      )}
       {t >= 7.5 && t < 15.2 && (
         <line
           x1={toolStart}
-          y1={isPortrait ? 140 : 260}
+          y1={isPortrait ? 100 : 260}
           x2={toolStart + timelineLine}
-          y2={isPortrait ? 140 : 260}
+          y2={isPortrait ? 100 : 260}
           stroke={COLORS.night}
           strokeWidth={8}
           strokeDasharray="16 12"
@@ -87,20 +112,22 @@ export const Mandate = () => {
         />
       )}
       {TOOLS.map((tool, i) => (
-        <Pop key={tool.label} at={7.5 + i * 1.2} until={15} x={toolStart + i * 280} y={isPortrait ? 140 : 260} float>
-          <circle r={100} fill={COLORS.white} />
+        <Pop key={tool.label} at={7.5 + i * 1.2} until={15} x={toolStart + i * 280} y={isPortrait ? 100 : 260} float>
+          <circle r={isPortrait ? 110 : 100} fill={COLORS.white} />
           <g>{tool.icon}</g>
-          <text y={160} textAnchor="middle" fontSize={40} fontWeight={700} fill={COLORS.night}>{tool.label}</text>
+          <text y={isPortrait ? 175 : 160} textAnchor="middle" fontSize={isPortrait ? 44 : 40} fontWeight={800} fill={COLORS.night}>
+            {tool.label}
+          </text>
         </Pop>
       ))}
       <Pop at={15} x={isPortrait ? 740 : 600} y={GROUND_Y} scale={0.6}>
         <Robot look="left" active />
       </Pop>
-      <Pop at={15.3} x={isPortrait ? 960 : 900} y={isPortrait ? -60 : 170} float>
-        <Tag text="✓ AI menolong kita bekerja" color={COLORS.teal} />
+      <Pop at={15.3} x={isPortrait ? 960 : 900} y={isPortrait ? -120 : 170} float>
+        <Tag text="✓ AI menolong kita bekerja" color={COLORS.teal} size={isPortrait ? 52 : 44} />
       </Pop>
-      <Pop at={17.5} x={isPortrait ? 960 : 900} y={isPortrait ? 100 : 320} float>
-        <Tag text="✗ Lari dari tanggung jawab" color={COLORS.red} />
+      <Pop at={17.5} x={isPortrait ? 960 : 900} y={isPortrait ? 60 : 320} float>
+        <Tag text="✗ Lari dari tanggung jawab" color={COLORS.red} size={isPortrait ? 52 : 44} />
       </Pop>
     </Stage>
   );

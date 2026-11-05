@@ -49,8 +49,8 @@ export const Crisis = () => {
       <Pop at={4} x={lecturerX} y={GROUND_Y}>
         <Person hoodie={COLORS.cyan} hair={COLORS.silver} look="left" gesture={t > 4.8 && t < 11} />
       </Pop>
-      <Pop at={5} x={isPortrait ? 1220 : 1560} y={isPortrait ? 270 : 270}>
-        <Bubble lines={["Mengapa kodemu", "ditulis seperti ini?"]} tail="right" />
+      <Pop at={5} x={isPortrait ? 1160 : 1560} y={isPortrait ? 240 : 270}>
+        <Bubble lines={["Mengapa kodemu", "ditulis seperti ini?"]} tail="right" size={isPortrait ? 48 : 40} />
       </Pop>
       <Pop at={11} x={isPortrait ? 580 : 390} y={320}>
         <Bubble lines={["..."]} size={70} />

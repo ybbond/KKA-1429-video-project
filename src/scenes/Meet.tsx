@@ -52,8 +52,8 @@ export const Meet = () => {
         <Person mood={t < 5 ? "neutral" : "worried"} typing={t < 9.5} look={lookDir} />
         <Desk />
       </g>
-      <Pop at={1} until={5} x={960} y={400}>
-        <Tag text="Raka · Ilmu Komputer" />
+      <Pop at={1} until={5} x={960} y={isPortrait ? 340 : 400}>
+        <Tag text="Raka · Ilmu Komputer" size={isPortrait ? 52 : 44} />
       </Pop>
       {CONCEPTS.map((c, i) => {
         const cx = isPortrait ? c.px : c.x;
@@ -66,7 +66,7 @@ export const Meet = () => {
             y={cy + Math.sin(t * 2 + i) * 14}
             float
           >
-            <Tag text={c.text} color={c.color} />
+            <Tag text={c.text} color={c.color} size={isPortrait ? 52 : 44} />
           </Pop>
         );
       })}

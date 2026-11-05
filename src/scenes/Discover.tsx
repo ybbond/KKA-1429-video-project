@@ -49,13 +49,13 @@ export const Discover = () => {
       <Pop at={1} x={robotX} y={GROUND_Y}>
         <Robot look="left" active={t >= 7} />
       </Pop>
-      <Pop at={5} until={12} x={isPortrait ? 660 : 660} y={isPortrait ? -40 : 290}>
-        <Bubble lines={["Kenapa rekursi", "bisa berhenti?"]} />
+      <Pop at={5} until={12} x={isPortrait ? 740 : 660} y={isPortrait ? -120 : 290}>
+        <Bubble lines={["Kenapa rekursi", "bisa berhenti?"]} size={isPortrait ? 48 : 40} />
       </Pop>
-      <Pop at={8} until={12} x={isPortrait ? 1240 : 1240} y={isPortrait ? 210 : 290}>
-        <Bubble lines={["Karena ada base case.", "Coba kamu tulis!"]} tail="right" />
+      <Pop at={8} until={12} x={isPortrait ? 1160 : 1240} y={isPortrait ? 170 : 290}>
+        <Bubble lines={["Karena ada base case.", "Coba kamu tulis!"]} tail="right" size={isPortrait ? 48 : 40} />
       </Pop>
-      <Pop at={12} x={960} y={isPortrait ? 140 : 500}>
+      <Pop at={12} x={960} y={isPortrait ? 100 : 500} scale={isPortrait ? 1.25 : 1}>
         <rect x={-360} y={-150} width={720} height={290} rx={32} fill={COLORS.night} stroke={COLORS.teal} strokeWidth={6} />
         <circle cx={-310} cy={-108} r={10} fill={COLORS.red} />
         <circle cx={-278} cy={-108} r={10} fill={COLORS.yellow} />

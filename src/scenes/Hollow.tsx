@@ -4,14 +4,28 @@ import { Pop, ramp, useSeconds } from "../components/motion";
 import { GROUND_Y, Stage, useIsPortrait } from "../components/Stage";
 import { COLORS } from "../theme";
 
-const Meter = ({ label, value, color, x, y }: { label: string; value: number; color: string; x: number; y: number }) => (
+const Meter = ({
+  label,
+  value,
+  color,
+  x,
+  y,
+  large,
+}: {
+  label: string;
+  value: number;
+  color: string;
+  x: number;
+  y: number;
+  large?: boolean;
+}) => (
   <g transform={`translate(${x} ${y})`}>
-    <text y={-20} fontSize={40} fontWeight={700} fill={COLORS.white}>{label}</text>
-    <text x={820} y={-20} textAnchor="end" fontSize={36} fontWeight={800} fill={color}>
+    <text y={-24} fontSize={large ? 48 : 40} fontWeight={700} fill={COLORS.white}>{label}</text>
+    <text x={820} y={-24} textAnchor="end" fontSize={large ? 44 : 36} fontWeight={800} fill={color}>
       {Math.round(value * 100)}%
     </text>
-    <rect width={820} height={44} rx={22} fill={COLORS.night} />
-    <rect width={Math.max(24, 820 * value)} height={44} rx={22} fill={color} />
+    <rect width={820} height={large ? 52 : 44} rx={large ? 26 : 22} fill={COLORS.night} />
+    <rect width={Math.max(28, 820 * value)} height={large ? 52 : 44} rx={large ? 26 : 22} fill={color} />
   </g>
 );
 
@@ -51,8 +65,8 @@ export const Hollow = () => {
       <Pop at={1} until={11} x={tower.x + tower.width / 2} y={200} float>
         <Tag text="Nilai A+" color={COLORS.teal} size={60} />
       </Pop>
-      <Meter label="Nilai" value={ramp(t, 0.5, 4.5, 0.3, 1)} color={COLORS.teal} x={meterX} y={isPortrait ? -240 : 170} />
-      <Meter label="Pemahaman" value={ramp(t, 4.5, 11, 0.7, 0.05)} color={COLORS.magenta} x={meterX} y={isPortrait ? -100 : 310} />
+      <Meter label="Nilai" value={ramp(t, 0.5, 4.5, 0.3, 1)} color={COLORS.teal} x={meterX} y={isPortrait ? -260 : 170} large={isPortrait} />
+      <Meter label="Pemahaman" value={ramp(t, 4.5, 11, 0.7, 0.05)} color={COLORS.magenta} x={meterX} y={isPortrait ? -80 : 310} large={isPortrait} />
       <Pop x={1300} y={GROUND_Y}>
         <Person
           mood={t < 5 ? "happy" : t < 11 ? "neutral" : "worried"}

@@ -18,8 +18,8 @@ const STARS = Array.from({ length: 70 }, (_, i) => ({
 
 export const Ground = ({ color }: { color: string }) => (
   <g>
-    <ellipse cx={960} cy={1620} rx={1840} ry={825} fill={COLORS.teal} opacity={0.12} />
-    <ellipse cx={960} cy={1620} rx={1800} ry={800} fill={color} />
+    <ellipse cx={960} cy={2120} rx={2240} ry={1325} fill={COLORS.teal} opacity={0.12} />
+    <ellipse cx={960} cy={2120} rx={2200} ry={1300} fill={color} />
   </g>
 );
 

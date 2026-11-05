@@ -58,14 +58,14 @@ export const Growth = () => {
         strokeDasharray={900}
         strokeDashoffset={900 * (1 - trendProgress)}
       />
-      <Pop at={0.5} x={isPortrait ? 1140 : 1235} y={170} float>
-        <Tag text="Pemahaman ↑" color={COLORS.yellow} />
+      <Pop at={0.5} x={isPortrait ? 960 : 1235} y={isPortrait ? -120 : 170} float>
+        <Tag text="Pemahaman ↑" color={COLORS.yellow} size={isPortrait ? 52 : 44} />
       </Pop>
       <Pop x={isPortrait ? 520 : 400} y={GROUND_Y}>
         <Person mood="happy" cheer={t > 9.5} look="right" gesture={t > 4 && t <= 9.5} />
       </Pop>
-      <Pop at={4.8} x={isPortrait ? 580 : 400} y={isPortrait ? 280 : 330} float>
-        <Tag text="Tugas selesai ✓" />
+      <Pop at={4.8} x={isPortrait ? 600 : 400} y={isPortrait ? 120 : 330} float>
+        <Tag text="Tugas selesai ✓" size={isPortrait ? 52 : 44} />
       </Pop>
     </Stage>
   );

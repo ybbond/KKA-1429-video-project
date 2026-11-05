@@ -18,7 +18,8 @@ const Flying = ({
   color,
   fromX,
   toX,
-}: (typeof HANDED_OVER)[number] & { fromX: number; toX: number }) => {
+  tagSize,
+}: (typeof HANDED_OVER)[number] & { fromX: number; toX: number; tagSize: number }) => {
   const t = useSeconds();
   if (t < at || t > at + 2.2) return null;
   const p = Math.min(1, (t - at) / 2);
@@ -29,7 +30,7 @@ const Flying = ({
     <g>
       {p < 1 && (
         <g transform={`translate(${x} ${y}) rotate(${(p - 0.5) * 28}) scale(${1 - p * p * 0.65})`}>
-          <Tag text={text} color={color} />
+          <Tag text={text} color={color} size={tagSize} />
         </g>
       )}
       {p === 1 && (
@@ -81,11 +82,11 @@ export const Slope = () => {
         )}
         <Robot look="left" active={t >= 5} overdrive={t > 12} />
       </g>
-      <Pop at={1.5} until={5} x={880} y={240}>
-        <Bubble lines={["Kenapa tidak", "sekalian saja?"]} />
+      <Pop at={1.5} until={5} x={880} y={isPortrait ? 120 : 240}>
+        <Bubble lines={["Kenapa tidak", "sekalian saja?"]} size={isPortrait ? 50 : 40} />
       </Pop>
       {HANDED_OVER.map((item) => (
-        <Flying key={item.text} {...item} fromX={fromX} toX={toX} />
+        <Flying key={item.text} {...item} fromX={fromX} toX={toX} tagSize={isPortrait ? 52 : 44} />
       ))}
     </Stage>
   );

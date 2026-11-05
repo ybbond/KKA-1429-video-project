@@ -40,7 +40,7 @@ export const Takeaway = () => {
   const t = useSeconds();
   const isPortrait = useIsPortrait();
   return (
-    <Stage to={COLORS.violet}>
+    <Stage to={COLORS.violet} ground={COLORS.night}>
       {t < LIST_END && (
         <line
           x1={isPortrait ? 560 : 960}
@@ -76,8 +76,15 @@ export const Takeaway = () => {
           <circle r={310} fill="none" stroke={COLORS.teal} strokeWidth={4} strokeDasharray="24 18" />
         </g>
       )}
-      <Pop at={12.4} x={960} y={isPortrait ? -40 : 190}>
-        <Headline lines={["AI membantu.", "Tanggung jawab tetap milikmu."]} size={isPortrait ? 66 : 84} />
+      <Pop at={12.4} x={960} y={isPortrait ? -180 : 190}>
+        <Headline
+          lines={
+            isPortrait
+              ? ["AI membantu.", "Tanggung jawab", "tetap milikmu."]
+              : ["AI membantu.", "Tanggung jawab tetap milikmu."]
+          }
+          size={isPortrait ? 78 : 84}
+        />
       </Pop>
       <Pop at={12.8} x={820} y={GROUND_Y} scale={0.95}>
         <Person mood="happy" look="right" gesture={t > 14} />

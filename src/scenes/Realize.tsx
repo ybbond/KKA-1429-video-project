@@ -55,13 +55,13 @@ export const Realize = () => {
         <Bulb />
       </Pop>
       <Pop at={5.5} x={tagX} y={tagY}>
-        <Tag text="Tanggung jawab" color={COLORS.yellow} size={36} />
+        <Tag text="Tanggung jawab" color={COLORS.yellow} size={isPortrait ? 46 : 36} />
       </Pop>
-      <Pop at={10} x={isPortrait ? 960 : 440} y={isPortrait ? -160 : 230} float>
-        <Tag text="✓ Mengasah kemampuan" color={COLORS.teal} size={40} />
+      <Pop at={10} x={isPortrait ? 960 : 440} y={isPortrait ? -200 : 230} float>
+        <Tag text="✓ Mengasah kemampuan" color={COLORS.teal} size={isPortrait ? 52 : 40} />
       </Pop>
-      <Pop at={11.5} x={isPortrait ? 960 : 1480} y={isPortrait ? 0 : 230} float>
-        <Tag text="✗ Menghapus tanggung jawab" color={COLORS.red} size={40} />
+      <Pop at={11.5} x={isPortrait ? 960 : 1480} y={isPortrait ? -40 : 230} float>
+        <Tag text="✗ Menghapus tanggung jawab" color={COLORS.red} size={isPortrait ? 52 : 40} />
       </Pop>
     </Stage>
   );
