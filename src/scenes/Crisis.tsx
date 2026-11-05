@@ -15,15 +15,36 @@ export const Crisis = () => {
       <rect width={1920} height={1080} fill={COLORS.red} opacity={alarm} />
       <g transform={`translate(${960 + shake} 400)`}>
         <rect x={-290} y={-190} width={580} height={380} rx={36} fill={COLORS.night} stroke={broken ? COLORS.red : COLORS.teal} strokeWidth={10} />
-        <text textAnchor="middle" dominantBaseline="central" fontSize={110} fontWeight={800} fill={broken ? COLORS.red : COLORS.teal}>
+        <circle cx={-235} cy={-142} r={10} fill={COLORS.red} />
+        <circle cx={-202} cy={-142} r={10} fill={COLORS.yellow} />
+        <circle cx={-169} cy={-142} r={10} fill={COLORS.green} />
+        <text y={-10} textAnchor="middle" dominantBaseline="central" fontSize={106} fontWeight={800} fill={broken ? COLORS.red : COLORS.teal}>
           {broken ? "ERROR" : "DEMO"}
         </text>
+        <rect x={-210} y={92} width={420} height={18} rx={9} fill={broken ? COLORS.red : COLORS.teal} opacity={0.35} />
+        {broken && (
+          <g>
+            {[-180, 0, 180].map((sx, i) => {
+              const drift = ((t - 2 + i * 0.5) % 1.8) / 1.8;
+              return (
+                <circle
+                  key={sx}
+                  cx={sx + Math.sin(t * 3 + i) * 18}
+                  cy={-205 - drift * 110}
+                  r={14 + drift * 22}
+                  fill={COLORS.silver}
+                  opacity={(1 - drift) * 0.35}
+                />
+              );
+            })}
+          </g>
+        )}
       </g>
       <Pop x={330} y={GROUND_Y}>
-        <Person mood={broken ? "worried" : "neutral"} />
+        <Person mood={broken ? "worried" : "neutral"} look="right" />
       </Pop>
       <Pop at={4} x={1600} y={GROUND_Y}>
-        <Person hoodie={COLORS.cyan} hair={COLORS.silver} />
+        <Person hoodie={COLORS.cyan} hair={COLORS.silver} look="left" gesture={t > 4.8 && t < 11} />
       </Pop>
       <Pop at={5} x={1560} y={270}>
         <Bubble lines={["Mengapa kodemu", "ditulis seperti ini?"]} tail="right" />

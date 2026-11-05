@@ -9,7 +9,7 @@ const MEMBERS = [
   { name: "Sisilia Gunung Ata Kewae", detail: "01086250017 - Sistem Informasi" },
   { name: "Vick Rab Wilbert", detail: "01085250019 - Informatika" },
   { name: "Willy Lengkong", detail: "01086250001 - Sistem Informasi" },
-  { name: "Winson Winson", detail: "01085250003 - Informatika" },
+  { name: "Winson", detail: "01085250003 - Informatika" },
   { name: "Yohanes Bandung Bondowoso", detail: "01085250015 - Informatika" },
 ];
 
@@ -28,8 +28,9 @@ export const Credits = () => {
       {MEMBERS.map((member, i) => {
         const rowY = 325 + i * 82;
         const opacity = ramp(t, 0.35 + i * 0.18, 0.85 + i * 0.18, 0, 1);
+        const slideX = ramp(t, 0.35 + i * 0.18, 0.85 + i * 0.18, -28, 0);
         return (
-          <g key={member.name} transform={`translate(0 ${rowY})`} opacity={opacity}>
+          <g key={member.name} transform={`translate(${slideX} ${rowY})`} opacity={opacity}>
             <text x={925} textAnchor="end" dominantBaseline="central" fontSize={36} fontWeight={700} fill={COLORS.white}>
               {member.name}
             </text>
@@ -44,10 +45,10 @@ export const Credits = () => {
       })}
 
       <Pop at={0.4} x={190} y={GROUND_Y} scale={0.52}>
-        <Person mood="happy" />
+        <Person mood="happy" cheer look="right" />
       </Pop>
       <Pop at={0.6} x={1730} y={GROUND_Y} scale={0.48}>
-        <Robot />
+        <Robot look="left" active />
       </Pop>
 
       <Pop at={1.8} x={960} y={950}>

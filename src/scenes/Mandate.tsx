@@ -32,14 +32,24 @@ const Tree = () => (
 
 export const Mandate = () => {
   const t = useSeconds();
+  const sway = Math.sin(t * 2) * 2.5;
+  const timelineLine = ramp(t, 7.8, 12.2, 0, 840);
+
   return (
     <Stage from="#1e6fb8" to="#a8ecdf" ground={COLORS.green} stars={false}>
-      <circle cx={1720} cy={150} r={80} fill={COLORS.yellow} />
-      <g transform={`translate(1560 ${GROUND_Y}) scale(${ramp(t, 1, 22, 0.2, 1)})`}>
+      <g transform="translate(1720 150)">
+        <circle r={112 + Math.sin(t * 3) * 8} fill={COLORS.yellow} opacity={0.28} />
+        <circle r={80} fill={COLORS.yellow} />
+      </g>
+      <g opacity={0.45}>
+        <ellipse cx={360 + t * 14} cy={150} rx={110} ry={32} fill={COLORS.white} />
+        <ellipse cx={1180 + t * 10} cy={110} rx={140} ry={38} fill={COLORS.white} />
+      </g>
+      <g transform={`translate(1560 ${GROUND_Y}) scale(${ramp(t, 1, 21, 0.25, 1)}) rotate(${sway})`}>
         <Tree />
       </g>
       <Pop x={330} y={GROUND_Y}>
-        <Person mood="happy" />
+        <Person mood="happy" look="right" gesture={t > 15} />
       </Pop>
       <Pop at={0.5} until={7} x={880} y={120}>
         <Tag text="Kejadian 2:15" color={COLORS.night} textColor={COLORS.white} />
@@ -51,15 +61,27 @@ export const Mandate = () => {
           lines={["“TUHAN Allah mengambil manusia itu dan menempatkannya", "dalam taman Eden untuk mengusahakan dan memelihara taman itu.”"]}
         />
       </Pop>
+      {t >= 7.5 && t < 15.2 && (
+        <line
+          x1={420}
+          y1={260}
+          x2={420 + timelineLine}
+          y2={260}
+          stroke={COLORS.night}
+          strokeWidth={8}
+          strokeDasharray="16 12"
+          opacity={0.45}
+        />
+      )}
       {TOOLS.map((tool, i) => (
-        <Pop key={tool.label} at={7.5 + i * 1.2} until={15} x={420 + i * 280} y={260}>
+        <Pop key={tool.label} at={7.5 + i * 1.2} until={15} x={420 + i * 280} y={260} float>
           <circle r={100} fill={COLORS.white} />
           <g>{tool.icon}</g>
           <text y={160} textAnchor="middle" fontSize={40} fontWeight={700} fill={COLORS.night}>{tool.label}</text>
         </Pop>
       ))}
       <Pop at={15} x={600} y={GROUND_Y} scale={0.6}>
-        <Robot />
+        <Robot look="left" active />
       </Pop>
       <Pop at={15.3} x={900} y={170} float>
         <Tag text="✓ AI menolong kita bekerja" color={COLORS.teal} />
