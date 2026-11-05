@@ -2,3 +2,4 @@
 bun = "1.4.4"
 # Remotion's CLI runs on Node via its shebang
 node = "22"
+"npm:impeccable" = "4.8.0"
