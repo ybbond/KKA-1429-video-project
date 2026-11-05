@@ -1,7 +1,7 @@
 # Mahasiswa yang Menyerahkan Segalanya pada AI
 *(The Student Who Let AI Do Everything)*
 
-**Mata Kuliah:** Allah Dan Ciptaan | Class 2026 (KKA 1429)  
+**Mata Kuliah:** Allah Dan Ciptaan | Kelas 2026 (KKA 1429)  
 **Kelompok:** Kelompok 15  
 **Format:** 3-Minute (`180s` @ `30 fps`) Kurzgesagt-Style Programmatic SVG Animation ([Remotion](https://www.remotion.dev/) + React 19 + TypeScript)  
 **Output Views:** Landscape `1920×1080` (`Main`) & Phone / Instagram Reels `1080×1920` (`Portrait`)
@@ -89,7 +89,7 @@ Raka reclaims his thinking and responsibility, working alongside AI as a tool ra
 | `1:57 – 2:12` | [`Realize.tsx`](src/scenes/Realize.tsx) | `15s` | Raka mengambil kembali tanggung jawabnya; AI sebagai pengasah kemampuan |
 | `2:12 – 2:34` | [`Mandate.tsx`](src/scenes/Mandate.tsx) | `22s` | Panggilan *Kejadian 2:15* dan kesinambungan alat (`Cangkul → Palu → Komputer → AI`) |
 | `2:34 – 2:52` | [`Takeaway.tsx`](src/scenes/Takeaway.tsx) | `18s` | Kontras penggunaan AI yang sehat vs. menggantikan pemikiran & integritas |
-| `2:52 – 3:00` | [`Credits.tsx`](src/scenes/Credits.tsx) | `8s` | Kredit penutup Kelompok 15 — Allah Dan Ciptaan \| Class 2026 (KKA 1429) |
+| `2:52 – 3:00` | [`Credits.tsx`](src/scenes/Credits.tsx) | `8s` | Kredit penutup Kelompok 15 — Allah Dan Ciptaan \| Kelas 2026 (KKA 1429) |
 
 Full dialogue and visual directions are documented in [`script.md`](script.md).
 

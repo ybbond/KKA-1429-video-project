@@ -21,7 +21,7 @@ export const Credits = () => {
       <Pop at={0.1} x={960} y={isPortrait ? -340 : 135}>
         <Headline lines={["Kelompok 15"]} size={isPortrait ? 88 : 70} />
         <text y={isPortrait ? 78 : 68} textAnchor="middle" fontSize={isPortrait ? 44 : 36} fontWeight={700} fill={COLORS.teal}>
-          Allah Dan Ciptaan | Class 2026 (KKA 1429)
+          Allah Dan Ciptaan | Kelas 2026 (KKA 1429)
         </text>
         <line x1={-520} y1={isPortrait ? 120 : 104} x2={520} y2={isPortrait ? 120 : 104} stroke={COLORS.silver} strokeWidth={3} opacity={0.35} />
       </Pop>

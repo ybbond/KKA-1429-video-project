@@ -52,29 +52,29 @@ export const Intro = () => {
                   ? ["Mahasiswa yang", "Menyerahkan Segalanya", "pada AI"]
                   : ["Mahasiswa yang Menyerahkan", "Segalanya pada AI"]
               }
-              size={isPortrait ? 86 : 92}
+              size={92}
             />
             <line
               x1={-420}
-              y1={isPortrait ? 275 : 185}
+              y1={isPortrait ? 300 : 185}
               x2={420}
-              y2={isPortrait ? 275 : 185}
+              y2={isPortrait ? 300 : 185}
               stroke={COLORS.teal}
               strokeWidth={6}
               strokeLinecap="round"
             />
             {isPortrait ? (
               <>
-                <text y={350} textAnchor="middle" fontSize={42} fontWeight={700} fill={COLORS.yellow}>
-                  Allah Dan Ciptaan · Class 2026 (KKA 1429)
+                <text y={410} textAnchor="middle" fontSize={50} fontWeight={700} fill={COLORS.yellow}>
+                  Allah Dan Ciptaan · Kelas 2026 (KKA 1429)
                 </text>
-                <text y={410} textAnchor="middle" fontSize={40} fontWeight={700} fill={COLORS.teal}>
+                <text y={495} textAnchor="middle" fontSize={48} fontWeight={700} fill={COLORS.teal}>
                   Kelompok 15
                 </text>
               </>
             ) : (
               <text y={255} textAnchor="middle" fontSize={38} fontWeight={700} fill={COLORS.yellow}>
-                Allah Dan Ciptaan | Class 2026 (KKA 1429) · Kelompok 15
+                Allah Dan Ciptaan | Kelas 2026 (KKA 1429) · Kelompok 15
               </text>
             )}
           </g>
@@ -103,25 +103,33 @@ export const Intro = () => {
             <g transform={`translate(960 ${ramp(t, TITLE_END, QUOTE_END, -100, -130)})`}>
               <Headline
                 lines={[
-                  "“Dahulu manusia menyerahkan",
+                  "“Dahulu",
+                  "manusia menyerahkan",
                   "cara berpikir mereka",
-                  "kepada mesin, dengan harapan",
-                  "hal itu akan membebaskan mereka.”",
+                  "kepada mesin,",
+                  "dengan harapan hal itu",
+                  "akan membebaskan mereka.”",
                 ]}
-                size={58}
+                size={80}
                 color={COLORS.white}
               />
-              <text y={330} textAnchor="middle" fontSize={48} fontWeight={700} fill={COLORS.yellow}>
-                “Janganlah engkau membuat mesin
+              <text y={630} textAnchor="middle" fontSize={75} fontWeight={700} fill={COLORS.yellow}>
+                “Janganlah engkau
               </text>
-              <text y={394} textAnchor="middle" fontSize={48} fontWeight={700} fill={COLORS.yellow}>
-                yang menyerupai akal budi manusia.”
+              <text y={710} textAnchor="middle" fontSize={75} fontWeight={700} fill={COLORS.yellow}>
+                membuat mesin
               </text>
-              <line x1={-320} y1={462} x2={320} y2={462} stroke={COLORS.orange} strokeWidth={5} strokeLinecap="round" />
-              <text y={530} textAnchor="middle" fontSize={36} fontWeight={700} fill={COLORS.silver}>
-                — Catatan Jihad Butlerian · Kitab Suci Oranye (O.C.B.) —
+              <text y={790} textAnchor="middle" fontSize={75} fontWeight={700} fill={COLORS.yellow}>
+                yang menyerupai
               </text>
-              <text y={584} textAnchor="middle" fontSize={34} fontWeight={600} fill={COLORS.teal}>
+              <text y={870} textAnchor="middle" fontSize={75} fontWeight={700} fill={COLORS.yellow}>
+                akal budi manusia.”
+              </text>
+              <line x1={-320} y1={1150} x2={320} y2={1150} stroke={COLORS.orange} strokeWidth={5} strokeLinecap="round" />
+              <text y={1240} textAnchor="middle" fontSize={42} fontWeight={700} fill={COLORS.silver}>
+                — Catatan Butlerian Jihad · Kitab Suci Oranye (O.C.B.) —
+              </text>
+              <text y={1300} textAnchor="middle" fontSize={38} fontWeight={600} fill={COLORS.teal}>
                 Dune · Frank Herbert (1965)
               </text>
             </g>

@@ -8,7 +8,7 @@ web
 
 ## Users
 
-- **Primary audience:** The **Allah Dan Ciptaan | Class 2026 (KKA 1429)** course lecturer and fellow university students watching the video as a course submission and/or in-class screening.
+- **Primary audience:** The **Allah Dan Ciptaan | Kelas 2026 (KKA 1429)** course lecturer and fellow university students watching the video as a course submission and/or in-class screening.
 - **Creators (Kelompok 15):**
   - Frans Jesky Yeremi (`01086250003` - Sistem Informasi)
   - Sisilia Gunung Ata Kewae (`01086250017` - Sistem Informasi)

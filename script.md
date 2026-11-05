@@ -35,14 +35,14 @@ It is relatable to university students and relatively easy to produce with AI-ge
 
 ## Film Script & Timestamp Breakdown (0:00 – 3:00)
 
-- **Course:** Allah Dan Ciptaan | Class 2026 (KKA 1429)
+- **Course:** Allah Dan Ciptaan | Kelas 2026 (KKA 1429)
 - **Group:** Kelompok 15
 - **Runtime:** 3:00 (180 seconds · 5,400 frames at 30 fps)
 
 ### Scene 1 — `Intro`: Title Card, Butlerian Opening Quote & Hook (`0:00 – 0:16` · 16s)
 
 - **`[0:00.0 – 0:00.9]` (0.9s · Title Card)**
-  - **VIDEO:** Orbital geometry on deep night backdrop. Main title **"Mahasiswa yang Menyerahkan Segalanya pada AI"** above a teal rule and **"Allah Dan Ciptaan | Class 2026 (KKA 1429) · Kelompok 15"**.
+  - **VIDEO:** Orbital geometry on deep night backdrop. Main title **"Mahasiswa yang Menyerahkan Segalanya pada AI"** above a teal rule and **"Allah Dan Ciptaan | Kelas 2026 (KKA 1429) · Kelompok 15"**.
   - **CAPTION / AUDIO:** *(Silent title card)*
 - **`[0:00.9 – 0:05.0]` (4.1s · Opening Quote — Dune / Butlerian Jihad / Orange Catholic Bible Reference)**
   - **VIDEO:** Golden-orange eclipse horizon (*Arrakis* / *Kitab Suci Oranye* nod). Epigraph quote card on screen:
@@ -175,7 +175,7 @@ It is relatable to university students and relatively easy to produce with AI-ge
 
 - **`[2:52 – 3:00]` (8s · End Credits)**
   - **VIDEO:** Credits roster framed by Raka and the AI robot:
-    - **Kelompok 15** — *Allah Dan Ciptaan | Class 2026 (KKA 1429)*
+    - **Kelompok 15** — *Allah Dan Ciptaan | Kelas 2026 (KKA 1429)*
     - Frans Jesky Yeremi | 01086250003 - Sistem Informasi
     - Sisilia Gunung Ata Kewae | 01086250017 - Sistem Informasi
     - Vick Rab Wilbert | 01085250019 - Informatika
