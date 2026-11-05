@@ -54,7 +54,9 @@ Current scene order, with start times: Intro 0:00 (0.9s title card + 0.9s–5.0s
 
 ## Verifying a change
 
-Typecheck passing is not enough, because layout bugs only show in frames. Render, then look at sampled frames:
+- **Do not automatically run `bun run render` after every prompt.** Changes in `src/` hot-reload directly in the owner's open Remotion Studio, and full video rendering takes ~1 minute. Only run `bun run render` when the owner explicitly asks to render or verify rendered frames.
+- Run `bun run typecheck` (or `impeccable detect src/`) for fast checks.
+- When asked to render and inspect frames:
 
 ```sh
 bun run render

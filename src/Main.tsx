@@ -7,11 +7,11 @@ import { TIMELINE } from "./timeline";
 
 const FADE_FRAMES = 15;
 
-const Fade = ({ fadeIn = FADE_FRAMES, children }: { fadeIn?: number; children: ReactNode }) => {
+const Fade = ({ fadeIn = true, children }: { fadeIn?: boolean; children: ReactNode }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const opacity = Math.min(
-    ramp(frame, 0, fadeIn, 0, 1),
+    fadeIn ? ramp(frame, 0, FADE_FRAMES, 0, 1) : 1,
     ramp(frame, durationInFrames - FADE_FRAMES, durationInFrames, 1, 0),
   );
   return <AbsoluteFill style={{ opacity }}>{children}</AbsoluteFill>;
@@ -27,7 +27,7 @@ export const Main = () => {
             key={Visual.name || captions[0].text}
             durationInFrames={Math.round(captions.reduce((sum, c) => sum + c.seconds, 0) * fps)}
           >
-            <Fade fadeIn={index === 0 ? 4 : FADE_FRAMES}>
+            <Fade fadeIn={index > 0}>
               <Visual />
               <Captions captions={captions} />
             </Fade>
